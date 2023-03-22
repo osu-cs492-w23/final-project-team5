@@ -8,6 +8,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import retrofit2.Call
 import retrofit2.Callback
@@ -18,7 +20,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 const val BASE_URL = "https://www.boredapi.com/api/"
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var textView : TextView
+    private lateinit var activityResultsListRV : RecyclerView
+    private val activityListAdapter = ActivityListAdapter()
     val TAG = "Activity Main"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,13 +29,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //https://www.boredapi.com/api/activity
-        getData()
+
+        val searchButton: Button = findViewById(R.id.btnToGetActivity)
+
+        searchButton.setOnClickListener{
+            getData()
+        }
 
         val calendarButton = findViewById<Button>(R.id.calendar_button)
         calendarButton.setOnClickListener {
             val intent = Intent(this, CalendarActivity::class.java)
             startActivity(intent)
         }
+
+        activityResultsListRV = findViewById(R.id.recyclerview)
+        activityResultsListRV.layoutManager = LinearLayoutManager(this)
+        activityResultsListRV.setHasFixedSize(false)
+        activityResultsListRV.adapter = activityListAdapter
+
+
     }
 
     private fun getData() {
@@ -47,9 +62,12 @@ class MainActivity : AppCompatActivity() {
         retrofitReturnData.enqueue(object : Callback<BoredData?> {
             override fun onResponse(call: Call<BoredData?>, response: Response<BoredData?>) {
                 val responseBody = response.body()!!
+                if(response.isSuccessful){
+                    activityListAdapter.addActivity(responseBody)
+                } else {
+                    Log.d(TAG, "Not successful")
+                }
 
-                textView = findViewById(R.id.textView)
-                textView.append(responseBody.activity)
             }
 
             override fun onFailure(call: Call<BoredData?>, t: Throwable) {
@@ -57,6 +75,8 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
+
 
     private fun learnMore(query:String){
         val intent = Intent(Intent.ACTION_WEB_SEARCH).apply{
