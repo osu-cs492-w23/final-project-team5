@@ -10,11 +10,13 @@ color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 id btnToGetActivity
+id linear_layout
 id textView
 layout activity_main
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string failed_web_search
 style Theme.MyApplication_final
 xml backup_rules
 xml data_extraction_rules

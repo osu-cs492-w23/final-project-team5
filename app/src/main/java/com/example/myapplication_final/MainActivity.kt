@@ -1,9 +1,13 @@
 package com.example.myapplication_final
 
+import android.app.SearchManager
+import android.content.ActivityNotFoundException
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import com.google.android.material.snackbar.Snackbar
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -45,4 +49,20 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
+    private fun learnMore(query:String){
+        val intent = Intent(Intent.ACTION_WEB_SEARCH).apply{
+            putExtra(SearchManager.QUERY, query)
+        }
+        try{
+            startActivity(intent)
+        } catch (e:ActivityNotFoundException) {
+            Snackbar.make(
+                findViewById(R.id.linear_layout),
+                R.string.failed_web_search,
+                Snackbar.LENGTH_LONG
+            ).show()
+        }
+    }
+
 }
