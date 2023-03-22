@@ -24,6 +24,10 @@
         "source": "C:\\Users\\Asa Kohn\\.gradle\\daemon\\7.5\\com.example.myapplication_final.app-main-29:\\xml\\backup_rules.xml"
     },
     {
+        "merged": "com.example.myapplication_final.app-merged_res-27:/layout_activity_list_item.xml.flat",
+        "source": "com.example.myapplication_final.app-main-29:/layout/activity_list_item.xml"
+    },
+    {
         "merged": "C:\\Users\\Asa Kohn\\.gradle\\daemon\\7.5\\com.example.myapplication_final.app-merged_res-27:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\Asa Kohn\\.gradle\\daemon\\7.5\\com.example.myapplication_final.app-main-29:\\xml\\data_extraction_rules.xml"
     },
@@ -54,10 +58,6 @@
     {
         "merged": "C:\\Users\\Asa Kohn\\.gradle\\daemon\\7.5\\com.example.myapplication_final.app-merged_res-27:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Asa Kohn\\.gradle\\daemon\\7.5\\com.example.myapplication_final.app-main-29:\\mipmap-xxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.myapplication_final.app-merged_res-27:/layout_activity_main.xml.flat",
-        "source": "com.example.myapplication_final.app-main-29:/layout/activity_main.xml"
     },
     {
         "merged": "C:\\Users\\Asa Kohn\\.gradle\\daemon\\7.5\\com.example.myapplication_final.app-merged_res-27:\\mipmap-mdpi_ic_launcher_round.webp.flat",

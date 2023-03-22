@@ -11,9 +11,11 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 id activity_name
 id backButton
+id bookmark
 id btnToGetActivity
 id calendarView
 id calendar_button
+id learn_more
 id linear_layout
 id recyclerview
 layout activity_list_item

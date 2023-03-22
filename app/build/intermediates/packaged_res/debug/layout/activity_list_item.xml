@@ -5,11 +5,30 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp">
 
-    <TextView
-        android:id="@+id/activity_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceHeadline5"
-        android:padding="16dp"/>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/activity_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textAppearance="?attr/textAppearanceHeadline6"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/learn_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Learn More"/>
+            <Button
+                android:id="@+id/bookmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bookmark this page"/>
+        </LinearLayout>
+    </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

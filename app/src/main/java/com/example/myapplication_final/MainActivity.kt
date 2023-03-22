@@ -92,4 +92,8 @@ class MainActivity : AppCompatActivity() {
             ).show()
         }
     }
+
+    private fun bookmarkActivity(){
+
+    }
 }

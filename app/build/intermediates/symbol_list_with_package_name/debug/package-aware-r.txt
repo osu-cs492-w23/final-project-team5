@@ -1955,6 +1955,7 @@ id beginOnFirstDraw
 id beginning
 id bestChoice
 id blocking
+id bookmark
 id bottom
 id bounce
 id bounceBoth
@@ -2097,6 +2098,7 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id learn_more
 id left
 id leftToRight
 id legacy
