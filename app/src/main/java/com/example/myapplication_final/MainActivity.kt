@@ -21,7 +21,7 @@ const val BASE_URL = "https://www.boredapi.com/api/"
 
 class MainActivity : AppCompatActivity() {
     private lateinit var activityResultsListRV : RecyclerView
-    private val activityListAdapter = ActivityListAdapter()
+    private val activityListAdapter = ActivityListAdapter(::learnMore, ::bookmarkActivity)
     val TAG = "Activity Main"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun bookmarkActivity(){
-
+    private fun bookmarkActivity(data:BoredData){
+        Log.d("TAG", "We clicked Bookmark")
     }
 }
