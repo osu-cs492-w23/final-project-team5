@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity() {
     private val activityListAdapter = ActivityListAdapter(::learnMore, ::bookmarkActivity)
     val TAG = "Activity Main"
 
-    private var viewModel: BookmarkedActivitiesViewModel by viewModels()
+    //private var viewModel1: BookmarkedActivitiesViewModel by viewModels()
+    private val viewModel2: BookmarkedActivitiesViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -103,6 +104,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun bookmarkActivity(data:BoredData){
         Log.d("TAG", "We clicked Bookmark")
-        viewModel.addBookmarkedActivity(data)
+        viewModel2.addBookmarkedActivity(data)
     }
 }
