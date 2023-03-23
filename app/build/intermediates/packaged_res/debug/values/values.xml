@@ -10,6 +10,10 @@
     <string name="app_name">Bored Fixer Upper</string>
     <string name="default_type">education</string>
     <string name="failed_web_search">No app was found to search, please install a browser app on your device.</string>
+    <style name="Button">
+        <item name="cornerSize">50%</item>
+
+    </style>
     <style name="Theme.MyApplication_final" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         
         <item name="colorPrimary">@color/purple_500</item>

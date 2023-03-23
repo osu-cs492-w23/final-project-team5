@@ -29,6 +29,7 @@ mipmap ic_launcher_round
 string app_name
 string default_type
 string failed_web_search
+style Button
 style Theme.MyApplication_final
 xml backup_rules
 xml data_extraction_rules

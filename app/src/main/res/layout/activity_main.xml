@@ -13,7 +13,11 @@
         android:id="@+id/btnToGetActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Generate Activity" />
+        android:layout_margin="4sp"
+        app:shapeAppearanceOverlay="@style/Button"
+        android:text="Generate Activity ➕"
+        app:backgroundTint="#2ECC71"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,14 +28,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Go to Calendar" />
+            android:layout_margin="4sp"
+            app:shapeAppearanceOverlay="@style/Button"
+            android:text="Go to Calendar 📅"
+            app:backgroundTint="#F5B041"/>
 
         <Button
             android:id="@+id/bookmark_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Go to Bookmarks" />
+            android:layout_margin="4sp"
+            app:shapeAppearanceOverlay="@style/Button"
+            android:text="Go to Bookmarks 🔖"
+            app:backgroundTint="#5DADE2"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
