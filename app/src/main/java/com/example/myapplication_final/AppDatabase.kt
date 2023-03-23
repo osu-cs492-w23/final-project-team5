@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(entities = [BoredData::class], version = 1)
 abstract class AppDatabase: RoomDatabase() {
-    abstract fun  dataDao(): dao
+    abstract fun  dataDao(): ActivityDao
 
     companion object{
         @Volatile private var instance: AppDatabase? = null

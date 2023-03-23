@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.activity.viewModels
-import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
@@ -42,6 +41,12 @@ class MainActivity : AppCompatActivity() {
         val calendarButton = findViewById<Button>(R.id.calendar_button)
         calendarButton.setOnClickListener {
             val intent = Intent(this, CalendarActivity::class.java)
+            startActivity(intent)
+        }
+
+        val bookmarkButton = findViewById<Button>(R.id.bookmark_button)
+        bookmarkButton.setOnClickListener{
+            val intent = Intent(this, BookmarkedActivitiesActivity::class.java)
             startActivity(intent)
         }
 

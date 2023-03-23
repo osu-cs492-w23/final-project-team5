@@ -13,6 +13,11 @@ class ActivityListAdapter(
 ) : RecyclerView.Adapter<ActivityListAdapter.ActivityListViewHolder>(){
     private var activityList = mutableListOf<BoredData>()
 
+    fun updateActivityList(newActList: List<BoredData>){
+        activityList = newActList as MutableList<BoredData>
+        notifyDataSetChanged()
+    }
+
     fun addActivity(newActivity: BoredData){
         activityList.add(newActivity)
         notifyDataSetChanged()

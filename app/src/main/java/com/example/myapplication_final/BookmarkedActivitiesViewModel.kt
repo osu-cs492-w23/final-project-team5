@@ -10,6 +10,8 @@ class BookmarkedActivitiesViewModel(application: Application): AndroidViewModel(
         AppDatabase.getInstance(application).dataDao()
     )
 
+    val bookmarkedActivities = repository.getBookmarkedActivities().asLiveData()
+
     fun addBookmarkedActivity(data: BoredData){
         viewModelScope.launch{
             repository.insertBookmarkedActivity(data)
