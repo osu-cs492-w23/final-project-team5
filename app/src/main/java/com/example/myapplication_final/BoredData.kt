@@ -12,5 +12,6 @@ data class BoredData(
     val price: Float,
     val link: String,
     val key: String,
-    val accessibility: Float
+    val accessibility: Float,
+    var num: Int = 1
 )

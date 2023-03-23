@@ -23,12 +23,14 @@
                 android:id="@+id/learn_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Learn More"/>
             <Button
                 android:id="@+id/bookmark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bookmark this page"/>
+                android:layout_weight="1"
+                android:text="Bookmark/Remove"/>
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -5,6 +5,7 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +17,7 @@ class BookmarkedActivitiesActivity: AppCompatActivity() {
     private val viewModel: BookmarkedActivitiesViewModel by viewModels()
     private val activityListAdapter = ActivityListAdapter(::learnMore, ::bookmarkActivity)
     private lateinit var bookmarkedActivitiesRV: RecyclerView
+    val tag = "BOOKMARK ACTIVITY"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,8 +55,14 @@ class BookmarkedActivitiesActivity: AppCompatActivity() {
     }
 
     private fun bookmarkActivity(data:BoredData){
-        Log.d("TAG", "We clicked Bookmark")
-        viewModel.addBookmarkedActivity(data)
+        if(data.num == 1){
+            data.num = 0
+            viewModel.deleteBookmarkedActivity(data)
+        }
+        else if(data.num == 0){
+            data.num = 1
+            viewModel.addBookmarkedActivity(data)
+        }
     }
 
     private fun goBack() {
