@@ -102,13 +102,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun bookmarkActivity(data:BoredData){
+        val btn = findViewById<Button>(R.id.bookmark)
         if(data.num == 1){
             data.num = 0
             viewModel.deleteBookmarkedActivity(data)
+            btn.text = "Bookmark"
         }
         else if(data.num == 0){
             data.num = 1
             viewModel.addBookmarkedActivity(data)
+            btn.text = "Remove"
         }
     }
 }

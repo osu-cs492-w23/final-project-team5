@@ -23,6 +23,7 @@ class BookmarkedActivitiesActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bookmarked_activities)
 
+
         bookmarkedActivitiesRV = findViewById(R.id.rv_bookmarked_activities)
         bookmarkedActivitiesRV.layoutManager = LinearLayoutManager(this)
         bookmarkedActivitiesRV.setHasFixedSize(true)
@@ -30,6 +31,10 @@ class BookmarkedActivitiesActivity: AppCompatActivity() {
 
         viewModel.bookmarkedActivities.observe(this){bookmarkedActivities ->
             activityListAdapter.updateActivityList(bookmarkedActivities)
+            /*for(entry in bookmarkedActivities){
+                val btn = findViewById<Button>(R.id.bookmark)
+                btn.text = "Remove"
+            }*/
         }
 
         val backButton = findViewById<Button>(R.id.backButton)
